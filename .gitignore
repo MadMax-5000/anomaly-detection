@@ -1,1 +1,6 @@
 data/
+venv-win/
+venv-linux/
+__pycache__/
+*.pyc
+
