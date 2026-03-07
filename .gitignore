@@ -1,6 +1,27 @@
+# datasets
 data/
+nab/
+
+# virtual environments
+venv/
 venv-win/
 venv-linux/
+.env/
+
+# python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
+# build
+build/
+dist/
+*.egg-info/
+
+# notebooks
+.ipynb_checkpoints/
+
+# system
+.DS_Store
+Thumbs.db
