@@ -25,3 +25,11 @@ dist/
 # system
 .DS_Store
 Thumbs.db
+
+# environment variables
+.env
+.env.*
+
+# IDEs files
+.vscode/
+.idea/
