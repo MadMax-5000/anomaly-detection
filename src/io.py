@@ -1,7 +1,7 @@
 import pandas as pd
-import numpy as np
 from pathlib import Path
 import json
+from datetime import datetime
 
 # load series function
 def load_series(path):
@@ -38,7 +38,11 @@ def load_dataset(directory):
 
     for csv in root_dir.rglob("*.csv"):
         relative_path = csv.relative_to(root_dir).as_posix()
-        series_dict[relative_path] = load_series(csv)
+        
+        try:
+            series_dict[relative_path] = load_series(csv)
+        except Exception as e:
+            print(f"Skipping bad file : {relative_path} with error : {e}")
 
     return series_dict
 
@@ -47,5 +51,6 @@ def load_combined_windows(labels_path):
 
     with open(labels_path, "r", encoding="utf-8") as f:
         windows = json.load(f)
+
     return windows
 
